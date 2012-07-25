@@ -10,11 +10,26 @@
 </metal:main>
 
 <metal:main fill-slot="header">
+  <div class="a-tabs">
+    <div class="a-tab a-selected">Here</div>
+    <div class="a-tab">Best on page</div>
+    <div class="a-tab">Unattached</div>
+    <div class="a-tab a-dropdown">
+      <span>Best</span>
+      <ul>
+        <li class="selected">Best</li>
+        <li>Hottest</li>
+        <li>Newest first</li>
+        <li>Oldest first</li>
+      </ul>
+    </div>
+  </div>
   <div tal:attributes="class 'annotator-outer';
                        style request.user and 'display: none' | nothing">
     <div class="hyp-paper">
       <form metal:use-macro="auth" tal:define="auth load: auth.pt" />
     </div>
+
   </div>
 </metal:main>
 

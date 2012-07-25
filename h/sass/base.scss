@@ -113,3 +113,37 @@ $gutter: 24;
 @mixin tertiarytext {
   font-size: .8em;
 }
+
+@mixin tabbox {
+  @include box-shadow(2px -10px 13px -8px hsla(0, 0%, 0%, .1) inset);
+  background: hsla(0, 0%, 99%, 1);
+  border-top-right-radius: .25em;
+  border-top-left-radius: .25em;
+  color: #999;
+  &:hover {
+    background: white;
+  }
+  &:active {
+    @include box-shadow( none );
+  }
+}
+
+@mixin linkbutton {
+  display: inline;
+  text-decoration: underline;
+  cursor: pointer;
+  padding-left: 1.3em;
+  line-height: 1.2em;
+  background-size: 1em 1em;
+  background-repeat: no-repeat;
+  &:active {
+    top: 1px;
+  }
+}
+
+@mixin linkbutton_right {
+  @include linkbutton;
+  background-position: right;
+  padding-left: 0;
+  padding-right: 1.3em;
+}
