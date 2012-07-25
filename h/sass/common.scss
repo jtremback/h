@@ -251,9 +251,9 @@ span.errorMsg {
     border: 1px solid $gray-lighter;
     cursor: pointer;
     float: left;
-    padding: .5em;
+    padding: .5em 1em;
     padding-top: .25em;
-    margin-right: .5em;
+    margin-right: -.5em;
     margin-bottom: 0px;
     
     & .a-selected {

@@ -117,8 +117,8 @@ $gutter: 24;
 @mixin tabbox {
   @include box-shadow(2px -10px 13px -8px hsla(0, 0%, 0%, .1) inset);
   background: hsla(0, 0%, 99%, 1);
-  border-top-right-radius: .25em;
-  border-top-left-radius: .25em;
+  border-top-right-radius: 2em 5em;
+  border-top-left-radius: 2em 5em;
   color: #999;
   &:hover {
     background: white;
