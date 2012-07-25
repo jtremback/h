@@ -247,13 +247,14 @@ span.errorMsg {
     }
   }
   .a-tab {
+    @include tabbox;
+    border: 1px solid $gray-lighter;
     cursor: pointer;
     float: left;
     padding: .5em;
     padding-top: .25em;
     margin-right: .5em;
     margin-bottom: 0px;
-    @include tabbox;
     
     & .a-selected {
       @include box-shadow(none);
