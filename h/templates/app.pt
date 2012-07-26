@@ -15,7 +15,7 @@
     <div class="a-tab a-selected">Screen</div>
     <div class="a-tab">Unanchored</div>
     <div class="a-tab">All</div>
-    <div class="a-dropdown hyp-write">
+    <div class="a-dropdown">
       <span>Best</span>
       <ul>
         <li class="selected">Best</li>

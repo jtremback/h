@@ -131,16 +131,12 @@ $gutter: 24;
 }
 
 @mixin linkbutton {
-  display: inline;
-  text-decoration: underline;
+  text-decoration: none;
   cursor: pointer;
   padding-left: 1.3em;
-  line-height: 1.2em;
   background-size: 1em 1em;
   background-repeat: no-repeat;
-  &:active {
-    top: 1px;
-  }
+  background-position: left center;
 }
 
 @mixin linkbutton_right {
@@ -148,4 +144,10 @@ $gutter: 24;
   background-position: right;
   padding-left: 0;
   padding-right: 1.3em;
+}
+
+@mixin invisibox {
+  background: transparent;
+  border-color: transparent;
+  outline-color: transparent;
 }
