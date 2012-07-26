@@ -234,11 +234,9 @@ span.errorMsg {
 
 .a-tabs {
   @include pie-clearfix;
-
   padding-left: .5em;
   padding-right: .5em;
   padding-top: 5em;
-  @include box-shadow(2px -10px 13px -8px hsla(0, 0%, 0%, .1) inset);
   .a-dropdown {
     @include linkbutton;
     ul {
@@ -248,19 +246,19 @@ span.errorMsg {
   }
   .a-tab {
     @include tabbox;
-    border: 1px solid $gray-lighter;
     cursor: pointer;
     float: left;
     padding: .5em 1em;
     padding-top: .25em;
     margin-right: -.5em;
     margin-bottom: 0px;
-    
-    & .a-selected {
+    position: relative;
+    &.a-selected {
       @include box-shadow(none);
       color: #333;
       font-weight: bold;
       background: hsla(0, 0%, 100%, 1);
+      z-index: 90;
     }
   }
 }

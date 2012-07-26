@@ -120,6 +120,8 @@ $gutter: 24;
   border-top-right-radius: 2em 5em;
   border-top-left-radius: 2em 5em;
   color: #999;
+  border: 1px solid $gray-lighter;
+  border-bottom: none;
   &:hover {
     background: white;
   }
