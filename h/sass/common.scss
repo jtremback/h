@@ -231,19 +231,11 @@ span.errorMsg {
   }
 }
 
-
 .a-tabs {
   @include pie-clearfix;
   padding-left: .5em;
   padding-right: .5em;
   padding-top: 5em;
-  .a-dropdown {
-    @include linkbutton;
-    ul {
-      left: -0em;
-      top: 1.6em;
-    }
-  }
   .a-tab {
     @include tabbox;
     cursor: pointer;
