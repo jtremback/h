@@ -214,8 +214,11 @@ span.errorMsg {
 }
 
 .a-dropdown {
+  @include linkbutton_right;
   display: inline;
-  position: relative; 
+  position: relative;
+  background-image: url("../images/dropdown_1.png");
+ 
   button {
     margin: 0;
   }
@@ -229,7 +232,6 @@ span.errorMsg {
     display: none;
     position: absolute;
     top: 2em;
-    border-top: 10px solid transparent;
     left: .8em;
     z-index: 10;
   }
