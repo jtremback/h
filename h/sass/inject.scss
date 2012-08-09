@@ -103,7 +103,7 @@
   z-index: 500;
   -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
 
-  &.annotator-collapsed { margin-left: -$heatmap-width - 10px; }
+  &.annotator-collapsed { margin-left: -380px - $heatmap-width - 10px; }
 }
 
 
@@ -141,8 +141,8 @@
 
 @media screen and (min-width: 37.5em) {
   .annotator-frame {
-    width: 428px + $heatmap-width + 10px;
-    margin-left: -428px - $heatmap-width - 10px;
+    width: 380px + $heatmap-width + 10px;
+    margin-left: -380px - $heatmap-width - 10px;
   }
 }
 

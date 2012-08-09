@@ -20,7 +20,7 @@
             tal:repeat="src js_links | []"></script>
     <script type="text/javascript">
       WebFontConfig = {
-        google: { families: ['Merriweather', 'Source Sans Pro', 'PT Serif'] }
+        google: { families: ['Merriweather', 'Open Sans', 'PT Serif'] }
       };
       (function() {
         var wf = document.createElement('script');
