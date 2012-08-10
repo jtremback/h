@@ -121,9 +121,14 @@ svg { -webkit-tap-highlight-color: rgba(255, 255, 255, 0); }
     vertical-align: middle;
   }
 
-  img {
+  .dimple {
+    @include box-shadow( inset 1px 1px 6px -1px $gray, 1px 1px 6px -1px $gray-lighter );
     float: left;
-    padding: .5em;
+    width: 25px;
+    height: 25px;
+    border-radius: 99px;
+    margin: .5em;
+    margin-bottom: .7em;
     cursor: pointer;
   }
 }
