@@ -124,11 +124,13 @@ svg { -webkit-tap-highlight-color: rgba(255, 255, 255, 0); }
   .dimple {
     @include box-shadow( inset 1px 1px 6px -1px $gray, 1px 1px 6px -1px $gray-lighter );
     float: left;
-    width: 25px;
-    height: 25px;
+    width: 10px;
+    height: 10px;
     border-radius: 99px;
-    margin: .5em;
-    margin-bottom: .7em;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: 11px;
+    margin-right: 10px;
     cursor: pointer;
   }
 }
