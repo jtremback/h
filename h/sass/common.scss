@@ -188,7 +188,6 @@ label {
   @include border-radius(.2em);
   @include smallshadow;
   background: #fff;
-  margin-bottom: 1em;
   padding: 1em;
 }
 
@@ -215,7 +214,7 @@ label {
   height: $threadexp-width;
   width: $threadexp-width;
   position: absolute;
-  top: .9em;
+  top: .8em;
   left: -($threadexp-width / 2);
   outline: 1px dotted #aaa;
   background-image: url("../images/minus_1.png");
@@ -231,6 +230,7 @@ label {
 .hyp-excerpt {
   @include box-shadow(1px 3px 8px rgba(0, 0, 0, .2));
   position: relative;
+  margin: 1em 0;
 
   blockquote {
     color: $gray;
@@ -303,7 +303,7 @@ label {
 
   &.hyp-hover {
     @include smallshadow(2px, 2px, .2);
-    z-index: 10;
+    z-index: 2;
     & > .topbar > .annotator-controls {
       opacity: 1;
     }
@@ -311,7 +311,7 @@ label {
 
 
   &.hyp-collapsed {
-    .hyp-content {
+    & > .hyp-content {
       overflow: hidden;
       text-overflow: ellipsis;
       -o-text-overflow: ellipsis;
@@ -333,7 +333,6 @@ label {
 .hyp-writer {
   @include smallshadow(0, 2px, .2);
   position: relative;
-  z-index: 20;
 
   textarea {
     width: 100%;
@@ -347,6 +346,7 @@ label {
 //BUCKET VIEW REPLY SUMMARIES
 .hyp-summary {
   @include smallshadow(2px, 3px, .2);
+  margin: 1em 0;
   position: relative;
   cursor: pointer;
 

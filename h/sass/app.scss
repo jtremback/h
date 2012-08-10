@@ -1,19 +1,89 @@
 @import 'compass';
+@import 'compass/css3/transform';
 @import 'compass/css3/user-interface';
+@import "compass/reset/utilities";
 
 @import 'reset';
 @import 'base';
 @import 'common';
 
-$font-size: 13;
+$font-size: 14;
 $em: $font-size / 1em;
 
 body {
-  font-family: "Open Sans", sans-serif;
+  font-family: "Source Sans Pro", "Open Sans", sans-serif;
   height: 100%;
-  overflow: auto;
   position: fixed;
   width: 100%;
+}
+
+header {
+  @include border-radius(.5em);
+  @include single-transition(all, .4s, 'ease-in-out');
+  @include smallshadow;
+  @include transform-origin(50%, 0);
+  background: white;
+  left: 0;
+  margin-top: 3.5em;
+  padding: 2em;
+  position: absolute;
+  width: 100%;
+  z-index: 4;
+
+  a {
+    cursor: pointer;
+    font-size: .9em;
+    text-decoration: underline;
+  }
+
+  a.close {
+    color: $gray;
+    position: absolute;
+    left: 1em;
+    top: 1em;
+
+    img {
+      height: .9em;
+      width: .9em;
+      margin-right: .3em;
+    }
+  }
+
+  form {
+    button[name^="forgot"] {
+      @include box-shadow(none);
+      @include reset-box-model;
+      float: right;
+      font-size: .9em;
+      color: $link-color;
+      text-decoration: underline;
+      text-shadow: none;
+
+      &:hover {
+        background: none;
+        color: $link-color-hover;
+      }
+    }
+  }
+
+  section {
+    clear: both;
+    & > div {
+      display: inline-block;
+      width: 50%;
+    }
+    & > form { width: 100%; }
+  }
+
+  .right {
+    float: right;
+    text-align: right;
+  }
+
+  &.hyp-collapsed {
+    @include rotateX(90deg);
+    opacity: 0;
+  }
 }
 
 html {
@@ -21,18 +91,6 @@ html {
 }
 
 input { width: 100%; }
-img { vertical-align: top; }
-
-section {
-  margin-top: 2em;
-  &:first-child { margin-top: 0; }
-}
-
-.right {
-  text-align: right;
-  span { font-size: .9em; }
-}
-
 svg { -webkit-tap-highlight-color: rgba(255, 255, 255, 0); }
 
 /* Annotator styles */
@@ -52,27 +110,21 @@ svg { -webkit-tap-highlight-color: rgba(255, 255, 255, 0); }
   cursor: pointer;
 }
 
-.annotator-outer {
-  padding: 0 1em;
-  margin-top: 5em;
-}
-
 //HEATMAP TABS
 .hyp-heatmap-tab {
   @include user-select(none);
   background-image: url("../images/side_tab.svg");
-  background-position: center;
+  background-position: center .9em;
   background-repeat: no-repeat;
-  background-size: 100% 1.43em; // (30% smaller than 2em)
+  background-size: 100% 1.4em;
   color: rgb(238, 238, 238);
-  font-weight: bold;
-  border-radius: 5px;
   cursor: pointer;
+  font-weight: bold;
   font-size: .8em;
-  margin-top: -1.6em; // v-align half of 1.2em (line-height) + 2em of padding
+  left: 2px;
+  margin-top: (1.4 + 2) / 2 * -1em;
   padding: 1em 0;
   position: fixed;
-  left: 2px;
   text-align: center;
   text-decoration: none;
   text-shadow: 1px 1px 1px rgb(51, 51, 51);
@@ -99,6 +151,20 @@ svg { -webkit-tap-highlight-color: rgba(255, 255, 255, 0); }
   }
 }
 
+#gutter {
+  background: url('../images/noise_1.png');
+  background-attachment: fixed;
+  height: 100%;
+  margin-left: $heatmap-width + 10px;
+  position: relative;
+}
+
+#persona {
+  select {
+    cursor: pointer;
+  }
+}
+
 //H BAR
 #toolbar {
   @include clearfix;
@@ -109,12 +175,12 @@ svg { -webkit-tap-highlight-color: rgba(255, 255, 255, 0); }
   border-bottom-left-radius: 4px;
   display: table;
   left: 1px;
-  margin-top: 1em;
+  margin-top: .5em;
   padding-right: 1em;
   position: absolute;
   text-align: right;
   width: 100%;
-  z-index: 2;
+  z-index: 5;
 
   & > * {
     display: table-cell;
@@ -136,9 +202,7 @@ svg { -webkit-tap-highlight-color: rgba(255, 255, 255, 0); }
 }
 
 #wrapper {
-  background: url('../images/noise_1.png');
-  background-attachment: fixed;
   height: 100%;
-  margin-left: 10px + $heatmap-width;
   overflow: auto;
+  padding: 3.5em 1em 1em 1em;
 }

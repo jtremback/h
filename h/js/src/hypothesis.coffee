@@ -40,6 +40,7 @@ class Hypothesis extends Annotator
         back: =>
           if @detail
             this.showViewer(@heatmap.buckets[@bucket])
+            this.publish('hostUpdated')
           else
             this.hide()
         update: => this.publish 'hostUpdated'
@@ -72,7 +73,10 @@ class Hypothesis extends Annotator
 
     @provider.getMaxBottom (max) =>
       $('#toolbar').css("top", "#{max}px")
-      @wrapper.css("padding-top", "#{max}px")
+      $('#gutter').css("padding-top", "#{max}px")
+      @heatmap.BUCKET_THRESHOLD_PAD = (
+        max + @heatmap.constructor.prototype.BUCKET_THRESHOLD_PAD
+      )
 
     this.subscribe 'beforeAnnotationCreated', (annotation) =>
       annotation.created = annotation.updated = (new Date()).toString()
@@ -412,6 +416,9 @@ class Hypothesis extends Annotator
                 collapsed = parent.classed('hyp-collapsed')
                 animate parent.classed('hyp-collapsed', !collapsed)
               when '#reply'
+                unless @plugins.Permissions?.user
+                  do setupAuth
+                  break
                 d3.event.preventDefault()
                 parent = d3.select(event.currentTarget)
                 animate parent.classed('hyp-collapsed', false)
@@ -455,8 +462,9 @@ class Hypothesis extends Annotator
 
   showEditor: (annotation) =>
     unless @plugins.Permissions?.user
-      @editor.hide();
-      this.show()
+      setupAuth =>
+        @editor.hide()
+        this.show()
       return
 
     if not annotation.user?
