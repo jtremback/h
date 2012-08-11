@@ -9,7 +9,11 @@
 <metal:main fill-slot="body">
 
   <div id="toolbar">
-    <div class="dimple"></div>
+    <div class="ribholder">
+      <div class="rib"></div>
+      <div class="rib"></div>
+      <div class="rib"></div>
+    </div>
     <form tal:replace="structure form['persona']"/>
   </div>
   <div id="gutter">

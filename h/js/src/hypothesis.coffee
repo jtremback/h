@@ -99,7 +99,7 @@ class Hypothesis extends Annotator
     this
 
   _setupDocumentEvents: ->
-    $('#toolbar div.dimple').click =>
+    $('#toolbar div.ribholder').click =>
       if @visible
         this.hide()
       else

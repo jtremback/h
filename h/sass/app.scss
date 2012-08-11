@@ -186,18 +186,17 @@ svg { -webkit-tap-highlight-color: rgba(255, 255, 255, 0); }
     display: table-cell;
     vertical-align: middle;
   }
-
-  .dimple {
-    @include box-shadow( inset 1px 1px 6px -1px $gray, 1px 1px 6px -1px $gray-lighter );
-    float: left;
-    width: 10px;
-    height: 10px;
-    border-radius: 99px;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    margin-left: 11px;
-    margin-right: 10px;
-    cursor: pointer;
+  .ribholder {
+    padding: 6px;
+    padding-bottom: 8px;
+    .rib {
+      @include box-shadow( inset 1px 1px 6px -2px $gray, 1px 1px 6px -2px $gray-lighter );
+      float: left;
+      width: 5px;
+      height: 20px;
+      border-radius: 99px;
+      margin-right: 3px;
+    }
   }
 }
 
