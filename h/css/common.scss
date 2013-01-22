@@ -303,6 +303,12 @@ blockquote {
       color: black;
     }
   }
+  &.floater {
+    padding: .5em 0em .5em 1em;
+    .dropdown-toggle {
+      @include fonticon("\002f", right, 0em);
+    }
+  }
 }
 
 .dropdown-menu {
@@ -357,7 +363,7 @@ blockquote {
   $right-radius: 2em 5em;
   $left-radius: 2em 5em;
   width: 100%;
-  font-family: sans-serif;
+  font-family: $sansFontFamily;
   & > li {
     position: relative;
     display: inline-block;
