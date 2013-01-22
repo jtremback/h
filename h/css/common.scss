@@ -440,11 +440,7 @@ blockquote {
 }
 
 .tab-pane {
-  background: $bodyBackground;
-  border: solid thin $grayLighter;
   display: none;
-  margin-top: -1px;  // Pull up and under tabs
-  padding: 1em;
   position: relative;
   &.active {
     display: inherit !important;

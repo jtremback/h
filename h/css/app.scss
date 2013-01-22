@@ -216,6 +216,10 @@ svg { -webkit-tap-highlight-color: rgba(255, 255, 255, 0); }
 
   .tab-pane {
     @include box-shadow(5px 5px 3px hsla(0, 0%, 0%, .1));
+    background: $bodyBackground;
+    border: solid thin $grayLighter;
+    margin-top: -1px;  // Pull up and under tabs
+    padding: 1em;
   }
 
   footer {
