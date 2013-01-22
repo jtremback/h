@@ -354,6 +354,8 @@ blockquote {
 
 //TABS////////////////////////////////
 .nav-tabs {
+  $right-radius: 2em 5em;
+  $left-radius: 2em 5em;
   width: 100%;
   font-family: sans-serif;
   & > li {
@@ -362,8 +364,8 @@ blockquote {
     overflow: hidden;
     margin-right: -.5em;
     background: hsla(0, 0%, 99%, 1);
-    border-top-right-radius: 2em 5em;
-    border-top-left-radius: 2em 5em;
+    border-top-right-radius: $right-radius;
+    border-top-left-radius: $left-radius;
     border: 1px solid $grayLighter;
     border-bottom: none;
     & > a {
@@ -382,13 +384,13 @@ blockquote {
       position: absolute;
       right: 0;
       top: 0;
-      border-top-right-radius: 2em 5em;
+      border-top-right-radius: $right-radius;
     }
     &::after {
       content: "";
       @include box-shadow(0px -10px 13px -8px hsla(0, 0%, 0%, .1) inset);
-      border-top-right-radius: 2em 5em;
-      border-top-left-radius: 2em 5em;
+      border-top-right-radius: $right-radius;
+      border-top-left-radius: $left-radius;
       position: absolute;
       top: 0;
       bottom: 0;
@@ -417,18 +419,18 @@ blockquote {
       border-top: none;
       border-top-right-radius: 0;
       border-top-left-radius: 0;
-      border-bottom-right-radius: 2em 5em;
-      border-bottom-left-radius: 2em 5em;
+      border-bottom-right-radius: $right-radius;
+      border-bottom-left-radius: $left-radius;
       &::before {
         border-top-right-radius: 0;
-        border-bottom-right-radius: 2em 5em;
+        border-bottom-right-radius: $right-radius;
       }
       &::after {
         @include box-shadow(0px 10px 13px -8px hsla(0, 0%, 0%, .1) inset);
         border-top-right-radius: 0;
         border-top-left-radius: 0;
-        border-bottom-right-radius: 2em 5em;
-        border-bottom-left-radius: 2em 5em;
+        border-bottom-right-radius: $right-radius;
+        border-bottom-left-radius: $left-radius;
       }
       &.active {
         &::after {
