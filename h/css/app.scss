@@ -46,6 +46,12 @@ svg { -webkit-tap-highlight-color: rgba(255, 255, 255, 0); }
   &:first-child {
     @include box-shadow(none);
     left: 0em !important;
+    & > .tabbable > .nav-tabs {
+      margin-bottom: 1em;
+    }
+    &.tabbed {
+      padding-top: 0;
+    }
   }
 
   &:last-child {
