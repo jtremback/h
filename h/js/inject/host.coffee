@@ -254,3 +254,32 @@ class Annotator.Host extends Annotator
     # is needed for preventing the sidebar from closing while annotating.
     unless event and this.isAnnotator(event.target)
       @mouseIsDown = true
+
+  # Annotator#element callback. Checks to see if a selection has been made
+  # on mouseup and if so displays the Annotator#adder. If @ignoreMouseup is
+  # set will do nothing. Also resets the @mouseIsDown property.
+  #
+  # event - A mouseup Event object.
+  #
+  # Returns nothing.
+  checkForEndSelection: (event) =>
+    @mouseIsDown = false
+
+    # This prevents the note image from jumping away on the mouseup
+    # of a click on icon.
+    if @ignoreMouseup
+      return
+
+    # Get the currently selected ranges.
+    @selectedRanges = this.getSelectedRanges()
+
+    for range in @selectedRanges
+      container = range.commonAncestor
+      return if this.isAnnotator(container)
+
+    if event and @selectedRanges.length
+      @adder
+        .css(top: event.pageY - $(@wrapper[0]).offset().top, right: 30)
+        .show()
+    else
+      @adder.hide()
