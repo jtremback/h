@@ -364,6 +364,7 @@ blockquote {
   $left-radius: 2em 5em;
   width: 100%;
   font-family: $sansFontFamily;
+  white-space: nowrap;
   & > li {
     position: relative;
     display: inline-block;
